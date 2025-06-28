@@ -16,7 +16,7 @@ EXPERIMENTS_TEMPLATE := $(EXPERIMENTS_ROOT)/template.mk
 memory_node := 0
 first_sibling := 2
 second_sibling := 26
-measure_timeout := 600
+measure_timeout := 1
 MOSALLOC_TOOL := $(ROOT_DIR)/mosalloc/src/libmosalloc.so
 
 ##### mosalloc paths
