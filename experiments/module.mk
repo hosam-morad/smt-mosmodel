@@ -15,7 +15,7 @@ export EXPERIMENTS_ROOT := $(ROOT_DIR)/$(MODULE_NAME)
 EXPERIMENTS_TEMPLATE := $(EXPERIMENTS_ROOT)/template.mk
 memory_node := 0
 first_sibling := 2
-second_sibling := 26
+second_sibling := $(shell cat /sys/devices/system/cpu/cpu$(first_sibling)/topology/thread_siblings_list | cut -d"," -f2)
 measure_timeout := 1
 MOSALLOC_TOOL := $(ROOT_DIR)/mosalloc/src/libmosalloc.so
 
