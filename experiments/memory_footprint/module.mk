@@ -16,7 +16,7 @@ $(MEASUREMENTS): $(ROOT_DIR)/$(EXPERIMENT_DIR)/layouts/layout4kb.csv | experimen
 	echo ========== [INFO] start producing: $@ ==========
 	experiment_dir=$$(realpath -m $@/../..)
 	$(bind_first_sibling) $(run_benchmark) --directory "$$experiment_dir" \
-		--submit_command "$(measure_perf_events) $(RUN_MOSALLOC_TOOL) --library $(MOSALLOC_TOOL) -cpf $< $(EXTRA_ARGS_FOR_MOSALLOC)" -- \
+		--submit_command "$(measure_perf_events) $(RUN_MOSALLOC_TOOL) --library $(MOSALLOC_TOOL) -cpf $< --debug $(EXTRA_ARGS_FOR_MOSALLOC)" -- \
 		$(BENCHMARK1)
 
 CREATE_MEMORY_FOOTPRINT_LAYOUTS := $(MODULE_NAME)/createLayouts.py
